@@ -140,7 +140,7 @@ const NotificationSection = () => {
 
     return (
         <React.Fragment>
-            <Box component="span" className={classes.box}>
+            <Box component="span" className={classes.box} style={{ paddingTop: "100px" }}>
                 <ButtonBase sx={{ borderRadius: '12px' }}>
                     <Avatar
                         variant="rounded"
@@ -151,7 +151,8 @@ const NotificationSection = () => {
                         onClick={handleToggle}
                         color="inherit"
                     >
-                        <IconBell stroke={1.5} size="1.3rem" />
+                        <IconBell 
+                            stroke={1.5} size="1.3rem" />
                     </Avatar>
                 </ButtonBase>
             </Box>
