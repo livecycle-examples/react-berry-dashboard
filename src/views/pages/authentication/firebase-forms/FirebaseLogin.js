@@ -157,30 +157,32 @@ const FirebaseLogin = (props, { ...others }) => {
                     password: Yup.string().max(255).required('Password is required')
                 })}
                 onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
-                    axios
-                        .post('https://api-server-nodejs.appseed.us/api/users/login', {
-                            firstName: 'Fred',
-                            lastName: 'Flintstone'
-                        })
-                        .then(function (response) {
-                            console.log(response);
-                        })
-                        .catch(function (error) {
-                            console.log(error);
-                        });
-                    try {
-                        if (scriptedRef.current) {
-                            setStatus({ success: true });
-                            setSubmitting(false);
-                        }
-                    } catch (err) {
-                        console.error(err);
-                        if (scriptedRef.current) {
-                            setStatus({ success: false });
-                            setErrors({ submit: err.message });
-                            setSubmitting(false);
-                        }
-                    }
+                    setStatus({ success: true });
+                    setSubmitting(false);
+                    // axios
+                    //     .post('https://api-server-nodejs.appseed.us/api/users/login', {
+                    //         firstName: 'Fred',
+                    //         lastName: 'Flintstone'
+                    //     })
+                    //     .then(function (response) {
+                    //         console.log(response);
+                    //     })
+                    //     .catch(function (error) {
+                    //         console.log(error);
+                    //     });
+                    // try {
+                    //     if (scriptedRef.current) {
+                    //         setStatus({ success: true });
+                    //         setSubmitting(false);
+                    //     }
+                    // } catch (err) {
+                    //     console.error(err);
+                    //     if (scriptedRef.current) {
+                    //         setStatus({ success: false });
+                    //         setErrors({ submit: err.message });
+                    //         setSubmitting(false);
+                    //     }
+                    // }
                 }}
             >
                 {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
